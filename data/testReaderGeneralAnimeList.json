@@ -1,0 +1,20 @@
+{
+    "animes": [
+        {
+            "name": "A",
+            "rating": 4.7,
+            "introduction": "I love the plot!"
+        },
+        {
+            "name": "B",
+            "rating": 4.9,
+            "introduction": "A very warm story!"
+        },
+        {
+            "name": "C",
+            "rating": 2.0,
+            "introduction": "Not worth watching.\n\tWell, the music is okay."
+        }
+        
+    ]
+}

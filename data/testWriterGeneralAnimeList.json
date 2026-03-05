@@ -1,0 +1,17 @@
+{"animes": [
+    {
+        "name": "a",
+        "rating": 5,
+        "introduction": "What a great love!"
+    },
+    {
+        "name": "b",
+        "rating": 3.9,
+        "introduction": "Not as well as this director's previous works."
+    },
+    {
+        "name": "c",
+        "rating": 4,
+        "introduction": ""
+    }
+]}
