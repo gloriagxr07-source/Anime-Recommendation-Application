@@ -1,0 +1,12 @@
+{"animes": [
+    {
+        "name": "aaa",
+        "rating": 2,
+        "introduction": "nice\n\t      123"
+    },
+    {
+        "name": "abc",
+        "rating": 0,
+        "introduction": ""
+    }
+]}

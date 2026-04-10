@@ -1,6 +1,5 @@
 package persistence;
 
-import model.Anime;
 import model.AnimeList;
 
 import java.io.IOException;

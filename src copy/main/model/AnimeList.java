@@ -4,10 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
 
-import java.sql.Wrapper;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 // Represents an animelist having a list of anime which have been 
 // recommended by a user (maintained in the order in which 
@@ -36,6 +33,8 @@ public class AnimeList implements Writable {
         }
         Anime newAnime = new Anime(animeName, rating);
         animes.add(newAnime);
+
+        EventLog.getInstance().logEvent(new Event("An anime added to anime list"));
     }
 
     // REQUIRES: findAnime(animeName) != null
@@ -76,6 +75,9 @@ public class AnimeList implements Writable {
     public void addComment(String animeName, String comment) {
         Anime anime = findAnime(animeName);
         anime.addComment(comment);
+
+        EventLog.getInstance().logEvent(new Event("A comment added to specific anime in the list"));
+
     }
 
     // EFFECTS: finds out the anime of the given name if anime exists in the list;

@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-// import java.io.FileNotFoundException;
-// import java.io.IOException;
 
 import ca.ubc.cs.ExcludeFromJacocoGeneratedReport;
 import model.Anime;
@@ -17,20 +15,25 @@ import persistence.JsonWriter;
 // Anime record and recomendation application
 // Reference: TellerApp UI class, JsonSerializationDemo UI class
 @ExcludeFromJacocoGeneratedReport
-public class AnimeApp {
+public class AnimeConsoleApp {
     private static final String JSON_STORE = "./data/animelist.json";
     private AnimeList animeList;
     private Scanner input;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
 
+    // Runs console type application
+    public static void main(String[] args) {
+        new AnimeConsoleApp();
+    }
+
     // EFFECTS: runs the anime application
-    public AnimeApp() {
+    public AnimeConsoleApp() {
         runApp();
     }
 
     // MODIFIES: this
-    // EFFECTS: processes user unput
+    // EFFECTS: processes user input
     private void runApp() {
         boolean keepGoing = true;
         String command = null;
@@ -125,7 +128,7 @@ public class AnimeApp {
         System.out.println("\nAnime name?");
         String name = input.next();
 
-        if (animeList.findAnime(name)==null) {
+        if (animeList.findAnime(name) == null) {
             System.out.println("Please enter the name of an anime that exists in the list!");
         } else {
             animeList.deleteAnime(name);
@@ -139,7 +142,7 @@ public class AnimeApp {
     private void doAddComment() {
         System.out.println("\nWhich anime to add comment?");
         String name = input.next();
-        if (animeList.findAnime(name)==null) {
+        if (animeList.findAnime(name) == null) {
             System.out.println("Please enter the name of an anime that exists in the list!");
         } else {
             System.out.println("Write a comment: ");
@@ -158,7 +161,7 @@ public class AnimeApp {
             System.out.println("No anime in the list. Better add an anime first...");
         } else {
             for (Anime anime : animes) {
-                System.out.println("\n" + anime);
+                System.out.println(anime + "\n");
             }
             System.out.println("Here is your anime list!");
 
@@ -180,7 +183,7 @@ public class AnimeApp {
                 System.out.println("No anime meet the required threshold.");
             } else {
                 for (Anime anime : animes) {
-                    System.out.println("\n" + anime);
+                    System.out.println(anime + "\n");
                 }
                 System.out.println("Here is your recommendation list!");
             }
